@@ -8,5 +8,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "**Vegetable Market** is a simple website listing various vegetables offered by a local shop, showcasing each vegetable’s \r nutritional benefits and usage tips.",
+  "devDependencies": {
+    "tailwindcss": "^3.4.13"
+  }
 }
