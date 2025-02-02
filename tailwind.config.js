@@ -1,10 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
-  presets: [],
-  darkMode: 'media',
+  content: ["./*.{html,js}"],
   theme: {
     extend: {},
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: "12px",
+        sm: "16px",
+      }
+    },
   },
   plugins: [],
 }
