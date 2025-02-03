@@ -5,15 +5,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="./output.css" rel="stylesheet" />
-  <title> Vegetable Market</title>
+  <title>Crop Market</title>
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.min.css" />
 </head>
 
 <body>
-  <h1 class="text-3xl font-bold underline bg-red-500 text-center container">
-    TETEM JAMES
-  </h1>
+  <header class="fixed top-0 left-0 w-full bg-orange-950 z-50">
+    <nav class="container flex items-center justify-between px-6 h-16 sm:h-20">
+      <div class="font-Condiment text-3xl">Crops</div>
+      <div data-nav-bar="nav_bar" class="absolute top-0 right-[-100%] min-h-[80vh] w-full bg-orange-950/70 backdrop-blur-sm flex 
+         items-center justify-center overflow-hidden duration-300 md:static md:w-auto md:bg-transparent md:min-h-fit">
+        <ul class="flex flex-col items-center gap-6 md:flex-row md:gap-10">
+          <li><a data-nav-link href="#home" class="nav-link">Home</a></li>
+          <li><a data-nav-link href="#about" class="nav-link">About</a></li>
+          <li><a data-nav-link href="#most_sold" class="nav-link">Most Sold</a></li>
+          <li><a data-nav-link href="#reviews" class="nav-link">Reviews</a></li>
+        </ul>
+
+        <div class="absolute top-0 -left-6 opacity-90 md:hidden">
+          <img src="assets/img/cocoa.png" alt="cocoa_plant" class="w-32">
+        </div>
+        <div class="absolute bottom-0 right-0 opacity-90 md:hidden">
+          <img src="assets/img/dates.png" alt="dates_crop" class="w-40">
+        </div>
+      </div>
+      <div data-menu-container="menu_container" class="cursor-pointer text-xl sm:text-3xl z-50 md:hidden">
+        <i data-menu="menu" class="ri-menu-4-line"></i>
+      </div>
+    </nav>
+  </header>
+  <main>
+
+    <script src="./dist/main.js" type="module"></script>
 </body>
 
 </html>
