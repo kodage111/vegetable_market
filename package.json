@@ -1,15 +1,26 @@
 {
-  "name": "vegetable_market",
+  "name": "crop_market",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "watch": "npx tailwindcss -i ./input.css -o ./output.css --watch"
+    "watch:tailwind": "npx tailwindcss -i ./input.css -o ./output.css --watch",
+    "watch:ts": "tsc --watch",
+    "build:tailwind": "npx tailwindcss -i ./input.css -o ./output.css",
+    "build:ts": "tsc",
+    "build": "npm run build:tailwind && npm run build:ts",
+    "watch": "concurrently \"npm run watch:tailwind\" \"npm run watch:ts\"",
+    "start": "lite-server"
   },
   "keywords": [],
-  "author": "",
+  "author": "Tetem James",
   "license": "ISC",
   "description": "**Vegetable Market** is a simple website listing various vegetables offered by a local shop, showcasing each vegetable’s \r nutritional benefits and usage tips.",
   "devDependencies": {
-    "tailwindcss": "^3.4.10"
+    "@types/node": "^22.13.0",
+    "concurrently": "^9.1.2",
+    "lite-server": "^2.6.1",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.7.3"
   }
 }
