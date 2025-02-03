@@ -3,13 +3,10 @@ module.exports = {
   content: ["./*.{html,js}"],
   theme: {
     extend: {},
-    container: {
-      center: true,
-      padding: {
-        DEFAULT: "12px",
-        sm: "16px",
-      }
-    },
+    fontFamily: {
+      Condiment: ["Condiment", "serif"],
+      Saira: ["Saira Semi Condensed", 'serif'],
+    }
   },
   plugins: [],
 }
