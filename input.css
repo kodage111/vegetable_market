@@ -3,3 +3,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    @apply bg-orange-950 text-white font-Saira tracking-wider;
+}
+
+@layer utilities {
+    .transition-padding {
+        transition-property: padding;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
+
+header {
+    @apply px-0 md:px-20 lg:px-32 transition-padding duration-300;
+}
+
+.nav-link {
+    @apply text-lg font-bold duration-300;
+}
+
+.nav-link:hover {
+    @apply text-yellow-500
+}
