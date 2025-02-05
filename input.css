@@ -6,18 +6,7 @@
 @tailwind utilities;
 
 body {
-    @apply bg-orange-950 text-white font-Saira tracking-wider;
-}
-
-@layer utilities {
-    .transition-padding {
-        transition-property: padding;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    }
-}
-
-header {
-    @apply px-0 md:px-20 lg:px-32 transition-padding duration-300;
+    @apply bg-primary text-text-primary font-Saira tracking-wider;
 }
 
 .nav-link {
@@ -26,4 +15,28 @@ header {
 
 .nav-link:hover {
     @apply text-yellow-500
+}
+
+.social-media-ic {
+    @apply text-slate-300 cursor-pointer duration-300
+}
+
+.social-media-ic:hover {
+    @apply text-yellow-500;
+}
+
+.btn {
+    @apply bg-secondary-100 text-primary font-bold py-2 px-4 rounded-lg duration-300;
+}
+
+.btn:hover {
+    @apply bg-secondary-200 text-text-primary;
+}
+
+.btn-outline {
+    @apply bg-transparent text-white;
+}
+
+.btn-outline:hover {
+    @apply bg-secondary-200/50;
 }
