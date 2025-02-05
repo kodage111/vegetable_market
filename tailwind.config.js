@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      Condiment: ["Condiment", "serif"],
+      Condiment: ["Kalam", "serif"],
       Saira: ["Saira Semi Condensed", 'serif'],
     }
   },
