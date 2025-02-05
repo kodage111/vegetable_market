@@ -56,7 +56,7 @@ module.exports = {
       }
     },
     fontFamily: {
-      Condiment: ["Kalam", "serif"],
+      Kalam: ["Kalam", "serif"],
       Saira: ["Saira Semi Condensed", 'serif'],
     }
   },
