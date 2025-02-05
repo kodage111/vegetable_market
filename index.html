@@ -5,16 +5,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="./output.css" rel="stylesheet" />
-  <title>Crop Market</title>
+  <title>Cropz</title>
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.min.css" />
 </head>
 
 <body>
-  <header class="fixed top-0 left-0 w-full bg-orange-950 z-50">
+  <header class="fixed top-0 left-0 w-full bg-primary z-50">
     <nav class="container flex items-center justify-between px-6 h-16 sm:h-20">
-      <div class="font-Condiment text-3xl">Crops</div>
-      <div data-nav-bar="nav_bar" class="absolute top-0 right-[-100%] min-h-[80vh] w-full bg-orange-950/70 backdrop-blur-sm flex 
+      <div class="font-Condiment text-3xl">Cropz</div>
+      <div data-nav-bar="nav_bar" class="absolute top-0 right-[-100%] min-h-[80vh] w-full bg-primary/70 backdrop-blur-sm flex 
          items-center justify-center overflow-hidden duration-300 md:static md:w-auto md:bg-transparent md:min-h-fit">
         <ul class="flex flex-col items-center gap-6 md:flex-row md:gap-10">
           <li><a data-nav-link href="#home" class="nav-link">Home</a></li>
@@ -35,9 +35,87 @@
       </div>
     </nav>
   </header>
-  <main>
 
-    <script src="./dist/main.js" type="module"></script>
+  <main>
+    <section data-home-section="home-section" class="relative overflow-hidden">
+      <div class="container py-36 min-h-screen">
+        <!-- blob -->
+        <div class="absolute w-64 h-64 bg-orange-600 rounded-full blur-3xl -z-10 opacity-40 top-1/2 left-1/2 lg:top-1/2 lg:left-1/2 
+          transform -translate-x-1/2 -translate-y-1/2">
+        </div>
+        <div
+          class="absolute w-64 h-64 bg-orange-600 rounded-full blur-3xl -z-10 opacity-40 bottom-0 right-0 lg:right-10 lg:bottom-10 animate-move-around">
+        </div>
+        <div class="flex flex-col space-y-5 lg:flex-row lg:space-x-5 lg:space-y-0">
+          <div class="flex flex-col space-y-5 w-full lg:w-1/2">
+            <!-- content -->
+            <div class="flex flex-col space-y-5 pb-4">
+              <h1 class="text-4xl sm:text-5xl font-bold">
+                Welcome to Cropz. <br>
+                Where <span class="text-secondary-100">Healthy</span> meets
+                <br> <span class="text-secondary-100">Delicious</span>.
+              </h1>
+              <p class="sm:text-xl font-Condiment text-xl text-slate-300">At crop market, we bring a diverse
+                selection
+                of
+                fresh, nutritious
+                crops cultivated by local farmers to your table. Whether you're seeking vibrant produce to nourish
+                your
+                body
+                or flavorful ingredients to delight your palate, you'll find it all here.
+              </p>
+            </div>
+
+            <div class="flex space-x-2">
+              <button class=" btn">
+                <span>Start Shopping</span>
+                <i class="ri-leaf-line"></i>
+              </button>
+
+              <button class="btn btn-outline">
+                More Info
+              </button>
+            </div>
+
+            <div class="flex items text-lg gap-5 md:pt-10">
+              <i class="ri-facebook-fill social-media-ic"></i>
+              <i class="ri-twitter-x-line social-media-ic"></i>
+              <i class="ri-instagram-line social-media-ic"></i>
+              <i class="ri-linkedin-fill social-media-ic"></i>
+            </div>
+          </div>
+
+          <div class="relative mt-8 w-full lg:w-1/2 items-center justify-center content-center">
+            <div>
+              <img src="assets/img/banana.png" alt="vegetables">
+            </div>
+
+            <div>
+              <img class="absolute  -bottom-10 right-0 lg:bottom-10 xl:-bottom-10 opacity-30 animate-moveOnY"
+                width="100" height="100" src="https://img.icons8.com/3d-fluency/94/corn.png" alt="corn" />
+            </div>
+
+            <div class="absolute -bottom-10 left-0 lg:bottom-10  xl:-bottom-10 opacity-50 animate-scaleUp">
+              <i class="ri-flower-line text-secondary-100 text-6xl"></i>
+            </div>
+
+            <div class="absolute -top-14 right-0 lg:top-14 xl:-top-2 opacity-30 animate-rotation">
+              <img width="100" height="100" src="https://img.icons8.com/3d-fluency/94/potato.png" alt="potato" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="./dist/main.js" type="module"></script>
 </body>
 
 </html>
+
+<!-- Explore our wide range of crops,
+each
+with its own unique health benefits and culinary applications. From the antioxidant-rich superfoods to the
+versatile staple crops, our mission is to connect you with the very best the land has to offer. Browse our
+selection,
+learn about each crop's virtues, and discover new ways to incorporate them into your healthy, delicious
+lifestyle. -->
