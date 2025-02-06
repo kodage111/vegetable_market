@@ -9,6 +9,14 @@ body {
     @apply bg-primary text-text-primary font-Saira tracking-wider;
 }
 
+h2 {
+    @apply text-2xl md:text-3xl xl:text-4xl
+}
+
+h3 {
+    @apply text-xl md:text-2xl xl:text-3xl
+}
+
 .nav-link {
     @apply text-lg font-bold duration-300;
 }
@@ -47,4 +55,8 @@ body {
 
 .service-card:hover {
     @apply -translate-y-1 hover:shadow-lg shadow-primary;
+}
+
+.title {
+    @apply font-Kalam text-secondary-100;
 }
