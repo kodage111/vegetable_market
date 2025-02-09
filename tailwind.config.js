@@ -15,10 +15,10 @@ module.exports = {
       },
     },
     screens: {
-      sm: "640px",
+      sm: "340px",
       md: "540px",
       lg: "768px",
-      xl: "1180px",
+      xl: "1024px",
     },
     keyframes: {
       rotate: {
