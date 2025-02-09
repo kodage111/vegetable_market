@@ -1,10 +1,12 @@
 import { DataAttributes } from "../constants.js";
+declare var Swiper: any;
 
 export class UiController {
   private navBarElement: HTMLElement | null;
   private hamburgerBtnElement: HTMLElement | null;
   private btnIconElement: HTMLElement | null;
   private navLinkElements: NodeListOf<Element> | null;
+  private swiper: typeof Swiper;
 
   constructor() {
     this.navBarElement = document.querySelector(DataAttributes.NavBar);
@@ -19,8 +21,35 @@ export class UiController {
   private init() {
     this.validateElements();
     this.addEventListeners();
+    this.initiazeSwipper();
   }
 
+  private initiazeSwipper() {
+    this.swiper = new Swiper(".swiper", {
+      speed: 400,
+      autoplay: {
+        delay: 5000,
+      },
+      slidesPerView: 1,
+      spaceBetween: 15,
+      breakpoints: {
+        540: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+        768: {
+          slidesPerView: 3,
+        },
+        1024: {
+          slidesPerView: 4,
+        },
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    })();
+  }
   private addEventListeners() {
     document.addEventListener("keydown", (e) => {
       if (
