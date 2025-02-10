@@ -13,6 +13,14 @@ body {
     @apply bg-primary text-text-primary font-Saira tracking-wider;
 }
 
+.reveal-item {
+    @apply animate-reveal ease-out duration-300;
+}
+
+.red-flower-animation {
+    @apply animate-appear ; 
+}
+
 h2 {
     @apply text-2xl md:text-3xl xl:text-4xl
 }
