@@ -29,6 +29,7 @@ export class UiController {
     this.initiazeSwipper();
 
     this.aboutSectionAnimation();
+    this.popularSectionAnimation();
   }
 
   private aboutSectionAnimation() {
@@ -72,7 +73,7 @@ export class UiController {
       (entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && entry.intersectionRatio >= 1) {
-            entry.target.classList.add("opacity-100");
+            entry.target.classList.add("reveal-item");
             entry.target.classList.remove("opacity-0");
             observer.unobserve(entry.target);
           }
@@ -89,6 +90,51 @@ export class UiController {
     }
     if (aboutSectionHeader) {
       sectionHeaderObserver.observe(aboutSectionHeader);
+    }
+  }
+
+  private popularSectionAnimation() {
+    const popularItems = document.querySelectorAll(
+      ".popular_card"
+    ) as NodeListOf<HTMLElement>;
+    const popularSectionHeader = document.querySelector(
+      DataAttributes.PopularSectionHeader
+    );
+
+    console.log(popularItems);
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.1) {
+            entry.target.classList.add("pop-up-popular-cards");
+            entry.target.classList.remove("opacity-0");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    const sectionHeaderObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
+            entry.target.classList.add("reveal-item");
+            entry.target.classList.remove("opacity-0");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 1 }
+    );
+
+    popularItems.forEach((item, index) => {
+      item.style.animationDelay = `${(index + 1) * 0.1}s`;
+      observer.observe(item);
+    });
+
+    if (popularSectionHeader) {
+      sectionHeaderObserver.observe(popularSectionHeader);
     }
   }
 
