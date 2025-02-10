@@ -28,8 +28,10 @@ export class UiController {
     this.swiper = new Swiper(".swiper", {
       speed: 400,
       autoplay: {
-        delay: 5000,
+        delay: 3000,
+        disableOnInteraction: false,
       },
+      grabCursor: true,
       slidesPerView: 1,
       spaceBetween: 15,
       breakpoints: {
