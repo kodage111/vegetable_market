@@ -14,7 +14,11 @@ body {
 }
 
 .reveal-item {
-    @apply animate-reveal ease-out duration-300;
+    @apply animate-reveal;
+}
+
+.pop-up-popular-cards {
+    @apply animate-pop-up-popular-cards;
 }
 
 .red-flower-animation {
