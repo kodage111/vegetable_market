@@ -2,19 +2,22 @@ import { DataAttributes } from "../constants.js";
 declare var Swiper: any;
 
 export class UiController {
+  private header: HTMLElement | null;
   private navBarElement: HTMLElement | null;
   private hamburgerBtnElement: HTMLElement | null;
   private btnIconElement: HTMLElement | null;
   private navLinkElements: NodeListOf<Element> | null;
-  private swiper: typeof Swiper;
+  private scrollBtnElement: HTMLElement | null;
 
   constructor() {
+    this.header = document.querySelector(DataAttributes.Header);
     this.navBarElement = document.querySelector(DataAttributes.NavBar);
     this.hamburgerBtnElement = document.querySelector(
       DataAttributes.MenuBtnContainer
     );
     this.btnIconElement = document.querySelector(DataAttributes.MenuBtn);
     this.navLinkElements = document.querySelectorAll(DataAttributes.NavLink);
+    this.scrollBtnElement = document.querySelector(DataAttributes.ScrollBtn);
     this.init();
   }
 
@@ -52,6 +55,7 @@ export class UiController {
       },
     })();
   }
+
   private addEventListeners() {
     document.addEventListener("keydown", (e) => {
       if (
@@ -69,6 +73,9 @@ export class UiController {
     this.navLinkElements?.forEach((element) => {
       element.addEventListener("click", () => this.toggleHamburgerMenu());
     });
+
+    window.addEventListener("scroll", () => this.handleScrollLimitUp());
+    window.addEventListener("scroll", () => this.handleHeadBarVisibility());
   }
 
   private validateElements() {
@@ -85,5 +92,39 @@ export class UiController {
     this.navBarElement?.classList.toggle("right-0");
     this.btnIconElement?.classList.toggle("ri-close-large-line");
     this.btnIconElement?.classList.toggle("ri-menu-4-line");
+  }
+
+  private handleScrollLimitUp() {
+    if (window.scrollY > 300) {
+      this.showScrollBtn();
+    } else {
+      this.hideScrollBtn();
+    }
+  }
+
+  private handleHeadBarVisibility() {
+    if (window.scrollY >= 50) {
+      this.highlightHeader();
+    } else {
+      this.hideHeader();
+    }
+  }
+
+  private highlightHeader() {
+    this.header?.classList.add("border-b", "border-secondary-100");
+  }
+
+  private hideHeader() {
+    this.header?.classList.remove("border-b", "border-secondary-100");
+  }
+
+  private showScrollBtn() {
+    this.scrollBtnElement?.classList.remove("-bottom-1/2");
+    this.scrollBtnElement?.classList.add("bottom-4");
+  }
+
+  private hideScrollBtn() {
+    this.scrollBtnElement?.classList.remove("bottom-4");
+    this.scrollBtnElement?.classList.add("-bottom-1/2");
   }
 }

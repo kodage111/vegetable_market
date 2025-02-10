@@ -12,13 +12,13 @@
 </head>
 
 <body>
-  <header class="fixed top-0 left-0 w-full bg-primary z-50">
+  <header data-header="main_header" class="fixed top-0 left-0 w-full  bg-primary z-50">
     <nav class="container flex items-center justify-between px-6 h-16 sm:h-20">
       <div class="font-Kalam text-3xl">Cropz</div>
       <div data-nav-bar="nav_bar" class="absolute top-0 right-[-100%] min-h-[80vh] w-full bg-primary/70 backdrop-blur-sm flex 
          items-center justify-center overflow-hidden duration-300 md:static md:w-auto md:bg-transparent md:min-h-fit">
         <ul class="flex flex-col items-center gap-6 md:flex-row md:gap-10">
-          <li><a data-nav-link href="#home" class="nav-link">Home</a></li>
+          <li><a data-nav-link href="#home" class="nav-link active-link">Home</a></li>
           <li><a data-nav-link href="#about" class="nav-link">About</a></li>
           <li><a data-nav-link href="#most_sold" class="nav-link">Most Sold</a></li>
           <li><a data-nav-link href="#reviews" class="nav-link">Reviews</a></li>
@@ -559,6 +559,11 @@
     </div>
 
   </footer>
+
+  <a href="#" data-scroll-btn="scroll_btn"
+    class="fixed right-4 -bottom-1/2 px-3 py-1 md:px-4 md:py-2 rounded-md text-lg bg-secondary-100 z-50 shadow-md md:-translate-y-1 duration-300">
+    <i class="ri-arrow-up-line"></i>
+  </a>
   <script src="./dist/main.js" type="module"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
