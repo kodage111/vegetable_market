@@ -90,18 +90,3 @@ h3 {
 .footer-social-media-ic:hover {
     @apply text-secondary-100 duration-300;
 }
-
-.bg-layered {
-    position: relative;
-    isolation: isolate;
-}
-
-.bg-layered::after {
-    @apply bg-orange-100/80;
-    content: '';
-    position: absolute;
-    inset: 0;
-    /* orange-500/60 */
-    backdrop-filter: blur(0.5px);
-    z-index: -1;
-}
