@@ -83,9 +83,6 @@ export class UiController {
 
   private setActiveNavLink() {
     const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(
-      ".nav-link"
-    ) as NodeListOf<HTMLAnchorElement>;
 
     let current: string | null;
     sections.forEach((section) => {
@@ -95,15 +92,17 @@ export class UiController {
       }
     });
 
-    navLinks.forEach((navLink) => {
-      navLink.classList.remove("active-link");
-      if (!current) {
-        return;
+    (this.navLinkElements as NodeListOf<HTMLAnchorElement>)?.forEach(
+      (navLink) => {
+        navLink.classList.remove("active-link");
+        if (!current) {
+          return;
+        }
+        if (navLink?.href.includes(current)) {
+          navLink.classList.add("active-link");
+        }
       }
-      if (navLink?.href.includes(current)) {
-        navLink.classList.add("active-link");
-      }
-    });
+    );
   }
 
   private validateElements() {
