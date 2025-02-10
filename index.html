@@ -12,13 +12,13 @@
 </head>
 
 <body>
-  <header data-header="main_header" class="fixed top-0 left-0 w-full  bg-primary z-50">
+  <header data-header="main_header" class="fixed top-0 left-0 w-full bg-primary z-50">
     <nav class="container flex items-center justify-between px-6 h-16 sm:h-20">
       <div class="font-Kalam text-3xl">Cropz</div>
       <div data-nav-bar="nav_bar" class="absolute top-0 right-[-100%] min-h-[80vh] w-full bg-primary/70 backdrop-blur-sm flex 
          items-center justify-center overflow-hidden duration-300 md:static md:w-auto md:bg-transparent md:min-h-fit">
         <ul class="flex flex-col items-center gap-6 md:flex-row md:gap-10">
-          <li><a data-nav-link href="#home" class="nav-link active-link">Home</a></li>
+          <li><a data-nav-link href="#home" class="nav-link">Home</a></li>
           <li><a data-nav-link href="#about" class="nav-link">About</a></li>
           <li><a data-nav-link href="#most_sold" class="nav-link">Most Sold</a></li>
           <li><a data-nav-link href="#reviews" class="nav-link">Reviews</a></li>
@@ -38,7 +38,7 @@
   </header>
 
   <main>
-    <section data-home-section="home-section" class="relative overflow-hidden">
+    <section id="home" data-home-section="home-section" class="relative overflow-hidden">
       <div class="container py-36">
         <div class="absolute w-64 h-64 bg-orange-600 rounded-full blur-3xl -z-10 opacity-40 top-1/2 left-1/2 lg:top-1/2 lg:left-1/2 
           transform -translate-x-1/2 -translate-y-1/2">
@@ -157,7 +157,7 @@
       </div>
     </section>
 
-    <section data-about-section="about-section" class="relative overflow-hidden py-20">
+    <section id="about" data-about-section="about-section" class="relative overflow-hidden py-20">
       <div
         class="absolute -top-9 -right-0 transform rotate-[220deg] w-44 xl:w-64 blur-[0.5px] duration-300 -z-10 opacity-30">
         <img src="assets/img/red_flower.png" alt="our_story_image" />
@@ -253,7 +253,7 @@
       </div>
     </section>
 
-    <section data-popular-section="popular-section" class="bg-orange-900/50 py-20 overflow-hidden">
+    <section id="most_sold" data-popular-section="popular-section" class="bg-orange-900/50 py-20 overflow-hidden">
       <div class="container items-center gap-3 text-center mb-40 md:mb-20">
         <h1 class="text-4xl sm:text-5xl font-bold">Popular</h1>
       </div>
@@ -276,7 +276,7 @@
             <i class="ri-star-half-fill"></i>
           </div>
           <div class="flex items-center justify-between">
-            <p class="text-xl">1,250 XAF</p>
+            <p class="text-lg">1,250 XAF</p>
             <button class="btn bg-secondary-100 py-2 px-3 rounded-md text-xl">
               <i class="ri-shopping-cart-fill"></i>
             </button>
@@ -297,13 +297,12 @@
             <i class="ri-star-line text-gray-400"></i>
           </div>
           <div class="flex items-center justify-between">
-            <p class="text-xl">350 XAF</p>
+            <p class="text-lg">350 XAF</p>
             <button class="btn bg-secondary-100 py-2 px-3 rounded-md text-xl">
               <i class="ri-shopping-cart-fill"></i>
             </button>
           </div>
         </div>
-
 
         <div class="popular_card  group/card">
           <div class="item-image">
@@ -319,7 +318,7 @@
             <i class="ri-star-line text-gray-400"></i>
           </div>
           <div class="flex items-center justify-between">
-            <p class="text-xl">450 XAF</p>
+            <p class="text-lg">450 XAF</p>
             <button class="btn bg-secondary-100 py-2 px-3 rounded-md text-xl">
               <i class="ri-shopping-cart-fill"></i>
             </button>
@@ -340,7 +339,7 @@
             <i class="ri-star-line text-gray-400"></i>
           </div>
           <div class="flex items-center justify-between">
-            <p class="text-xl">500 XAF</p>
+            <p class="text-lg">500 XAF</p>
             <button class="btn bg-secondary-100 py-2 px-3 rounded-md text-xl">
               <i class="ri-shopping-cart-fill"></i>
             </button>
@@ -361,7 +360,7 @@
             <i class="ri-star-line text-gray-400"></i>
           </div>
           <div class="flex items-center justify-between">
-            <p class="text-xl">3,500 XAF</p>
+            <p class="text-lg">3,500 XAF</p>
             <button class="btn bg-secondary-100 py-2 px-3 rounded-md text-xl">
               <i class="ri-shopping-cart-fill"></i>
             </button>
@@ -370,7 +369,7 @@
       </div>
     </section>
 
-    <section data-review-section="reviews-section" class="relative pt-20 pb-36 overflow-hidden">
+    <section id="reviews" data-review-section="reviews-section" class="relative pt-20 pb-36 overflow-hidden">
       <div
         class="absolute pt-44 -top-20 left-16 transform rotate-[110deg] w-44 xl:w-64 blur-[0.5px] duration-300 -z-10 opacity-30">
         <img src="assets/img/red_flower.png" alt="our_story_image" />

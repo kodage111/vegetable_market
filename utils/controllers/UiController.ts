@@ -8,6 +8,7 @@ export class UiController {
   private btnIconElement: HTMLElement | null;
   private navLinkElements: NodeListOf<Element> | null;
   private scrollBtnElement: HTMLElement | null;
+  private swiper: any;
 
   constructor() {
     this.header = document.querySelector(DataAttributes.Header);
@@ -22,6 +23,7 @@ export class UiController {
   }
 
   private init() {
+    this.setActiveNavLink();
     this.validateElements();
     this.addEventListeners();
     this.initiazeSwipper();
@@ -53,7 +55,7 @@ export class UiController {
         el: ".swiper-pagination",
         clickable: true,
       },
-    })();
+    });
   }
 
   private addEventListeners() {
@@ -76,6 +78,32 @@ export class UiController {
 
     window.addEventListener("scroll", () => this.handleScrollLimitUp());
     window.addEventListener("scroll", () => this.handleHeadBarVisibility());
+    window.addEventListener("scroll", () => this.setActiveNavLink());
+  }
+
+  private setActiveNavLink() {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(
+      ".nav-link"
+    ) as NodeListOf<HTMLAnchorElement>;
+
+    let current: string | null;
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 60;
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach((navLink) => {
+      navLink.classList.remove("active-link");
+      if (!current) {
+        return;
+      }
+      if (navLink?.href.includes(current)) {
+        navLink.classList.add("active-link");
+      }
+    });
   }
 
   private validateElements() {
