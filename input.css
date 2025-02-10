@@ -29,6 +29,10 @@ h3 {
     @apply text-yellow-500
 }
 
+.active-link {
+    @apply text-secondary-100;
+}
+
 .social-media-ic {
     @apply text-slate-300 cursor-pointer duration-300;
 }
@@ -93,8 +97,4 @@ h3 {
 
 .footer-social-media-ic:hover {
     @apply text-secondary-100 duration-300;
-}
-
-.active-link {
-    @apply text-secondary-100;
 }
