@@ -5,4 +5,8 @@ export enum DataAttributes {
   MenuBtn = '[data-menu="menu"]',
   NavLink = "[data-nav-link]",
   ScrollBtn = '[data-scroll-btn="scroll_btn"]',
+
+  AboutSectionItemToAnimate = "[data-reveal-item]",
+  AboutSectionRedFlowerDeco = "[data-about-section-red-flower]",
+  AboutSectionHeader = "[data-about-section-header]",
 }

@@ -27,6 +27,69 @@ export class UiController {
     this.validateElements();
     this.addEventListeners();
     this.initiazeSwipper();
+
+    this.aboutSectionAnimation();
+  }
+
+  private aboutSectionAnimation() {
+    const revealItems = document.querySelectorAll(
+      DataAttributes.AboutSectionItemToAnimate
+    );
+    const redFlower = document.querySelector(
+      DataAttributes.AboutSectionRedFlowerDeco
+    );
+    const aboutSectionHeader = document.querySelector(
+      DataAttributes.AboutSectionHeader
+    );
+
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
+            entry.target.classList.add("reveal-item");
+            entry.target.classList.remove("opacity-0");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    const redFlowerObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
+            entry.target.classList.add("red-flower-animation");
+            entry.target.classList.remove("opacity-0");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    const sectionHeaderObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 1) {
+            entry.target.classList.add("opacity-100");
+            entry.target.classList.remove("opacity-0");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 1 }
+    );
+
+    revealItems.forEach((item) => {
+      observer.observe(item);
+    });
+    if (redFlower) {
+      redFlowerObserver.observe(redFlower);
+    }
+    if (aboutSectionHeader) {
+      sectionHeaderObserver.observe(aboutSectionHeader);
+    }
   }
 
   private initiazeSwipper() {
@@ -138,11 +201,11 @@ export class UiController {
   }
 
   private highlightHeader() {
-    this.header?.classList.add("border-b", "border-secondary-100");
+    this.header?.classList.add(...["border-b", "border-secondary-100"]);
   }
 
   private hideHeader() {
-    this.header?.classList.remove("border-b", "border-secondary-100");
+    this.header?.classList.remove(...["border-b", "border-secondary-100"]);
   }
 
   private showScrollBtn() {
