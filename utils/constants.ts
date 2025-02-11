@@ -8,6 +8,8 @@ export enum DataAttributes {
 
   AboutSectionItemToAnimate = "[data-reveal-item]",
   AboutSectionRedFlowerDeco = "[data-about-section-red-flower]",
+  ReviewSectionRedFlowerDeco = "[data-review-section-red-flower]",
   AboutSectionHeader = "[data-about-section-header]",
   PopularSectionHeader = "[data-popular-section-header]",
+  ReviewSection = '[data-review-section="reviews-section"]',
 }

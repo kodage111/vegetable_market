@@ -30,6 +30,7 @@ export class UiController {
 
     this.aboutSectionAnimation();
     this.popularSectionAnimation();
+    this.reviewSectionAnimation();
   }
 
   private aboutSectionAnimation() {
@@ -101,7 +102,6 @@ export class UiController {
       DataAttributes.PopularSectionHeader
     );
 
-    console.log(popularItems);
     const observer = new IntersectionObserver(
       (entries, observer) => {
         entries.forEach((entry) => {
@@ -112,7 +112,7 @@ export class UiController {
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     );
 
     const sectionHeaderObserver = new IntersectionObserver(
@@ -135,6 +135,46 @@ export class UiController {
 
     if (popularSectionHeader) {
       sectionHeaderObserver.observe(popularSectionHeader);
+    }
+  }
+
+  private reviewSectionAnimation() {
+    const reviewSection = document.querySelector(DataAttributes.ReviewSection);
+    const reviewSectionRedFlowerDeco: HTMLDivElement | null =
+      document.querySelector(DataAttributes.ReviewSectionRedFlowerDeco);
+
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.1) {
+            entry.target.classList.add("fade-down-review-section");
+            entry.target.classList.remove("opacity-0");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const redFlowerObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.1) {
+            entry.target.classList.add("red-flower-animation-from-left");
+            entry.target.classList.remove("opacity-0");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (reviewSection) {
+      observer.observe(reviewSection);
+    }
+    if (reviewSectionRedFlowerDeco) {
+      reviewSectionRedFlowerDeco.style.animationDelay = `${0.8}s`;
+      redFlowerObserver.observe(reviewSectionRedFlowerDeco);
     }
   }
 

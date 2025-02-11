@@ -21,8 +21,16 @@ body {
     @apply animate-pop-up-popular-cards;
 }
 
+.fade-down-review-section {
+    @apply animate-fade-down;
+}
+
 .red-flower-animation {
     @apply animate-appear ; 
+}
+
+.red-flower-animation-from-left {
+    @apply animate-appear-left ;
 }
 
 h2 {
