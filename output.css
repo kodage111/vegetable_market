@@ -1395,66 +1395,6 @@ body{
 
 .red-flower-animation-from-left{
   animation: appear-left 0.5s ease-out both;
-.duration-1000{
-  transition-duration: 1000ms;
-}
-
-.duration-300{
-  transition-duration: 300ms;
-}
-
-.ease-in{
-  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-    transform: scale(0.6) translate(0, -10%);
-  animation: animate-in 1s ease-out both;
-}
-
-@keyframes pop-up{
-  0%{
-    opacity: 0;
-    transform: translate(0, 20%);
-  }
-
-  100%{
-    opacity: 1;
-    transform: translate(0, 0);
-  }
-}
-
-.pop-up-popular-cards{
-  animation: pop-up 0.3s ease-in both;
-}
-
-@keyframes fadeDown{
-  0%{
-    opacity: 0;
-    transform: translate(0, -20%);
-  }
-
-  100%{
-    opacity: 1;
-    transform: translate(0, 0);
-  }
-}
-
-.fade-down-review-section{
-  animation: fadeDown 1s ease-out both;
-}
-
-@keyframes appear-left{
-  0%{
-    opacity: 0;
-    transform: rotate(110deg) translate(20%, 0);
-  }
-
-  100%{
-    opacity: 0.3;
-    transform: rotate(110deg) translate(0, 0);
-  }
-}
-
-.red-flower-animation-from-left{
-  animation: appear-left 0.5s ease-out both;
 }
 
 h2{
