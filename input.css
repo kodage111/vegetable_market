@@ -30,7 +30,7 @@ body {
 }
 
 .red-flower-animation-from-left {
-    @apply animate-appear-left ; 
+    @apply animate-appear-left ;
 }
 
 h2 {

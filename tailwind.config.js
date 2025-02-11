@@ -53,10 +53,6 @@ module.exports = {
         '100%': { opacity: 0.3, transform: "rotate(110deg) translate(0, 0)" },
       },
       "pop-up": {
-        '0%': { opacity: 0, transform: 'translate(0, -20%)' },
-        '100%': { opacity: 1, transform: 'translate(0, 0)' },
-      },
-      "pop-up": {
         '0%': { opacity: 0, transform: 'translate(0, 20%)' },
         '100%': { opacity: 1, transform: 'translate(0, 0)' },
       },
@@ -71,11 +67,11 @@ module.exports = {
       "move-around": "move-around 20s infinite ease-in-out",
       "move-around": "move-around 25s infinite alternate ease-in-out",
       moveOnY: "moveUp 3s linear infinite",
-      reveal: 'animate-in 1s ease-out both',
-      appear: 'appear 0.5s ease-out both',
-      'appear-left': 'appear-left 0.5s ease-out both',
-      'pop-up-popular-cards': 'pop-up 0.3s ease-in both',
-      'fade-down': "fadeDown 1s ease-out both",
+        reveal: 'animate-in 1s ease-out both',
+        appear: 'appear 0.5s ease-out both',
+        'appear-left': 'appear-left 0.5s ease-out both',
+        'pop-up-popular-cards': 'pop-up 0.3s ease-in both',
+        'fade-down': "fadeDown 1s ease-out both",
     },
     container: {
       center: true,
