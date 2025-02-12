@@ -32,6 +32,7 @@ export class UiController {
     this.aboutSectionAnimation();
     this.popularSectionAnimation();
     this.reviewSectionAnimation();
+    this.servicesSectionAnimation();
   }
 
   private aboutSectionAnimation() {
@@ -137,6 +138,30 @@ export class UiController {
     if (popularSectionHeader) {
       sectionHeaderObserver.observe(popularSectionHeader);
     }
+  }
+
+  private servicesSectionAnimation() {
+    const serviceCards = document.querySelectorAll(
+      ".service-card"
+    ) as NodeListOf<HTMLElement>;
+
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.1) {
+            entry.target.classList.add("fade-down-services-page-text");
+            entry.target.classList.remove("opacity-0");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    serviceCards.forEach((item, index) => {
+      item.style.animationDelay = `${(index + 1) * 0.1}s`;
+      observer.observe(item);
+    });
   }
 
   private reviewSectionAnimation() {
