@@ -60,6 +60,14 @@ module.exports = {
         '0%': { opacity: 0, transform: 'translate(0, -20%)' },
         '100%': { opacity: 1, transform: 'translate(0, 0)' },
       },
+      fadeDown60px: {
+        '0%': { opacity: 0, transform: 'translate(0, -60px)' },
+        '100%': { opacity: 1, transform: 'translate(0, 0)' },
+      },
+      scaleUp50: {
+        "0%": { opacity: 0, transform: "scale(0.5)" },
+        "100%": { opacity: 1, transform: "scale(1)" },
+      },
     },
     animation: {
       rotation: "rotate 15s linear infinite",
@@ -70,7 +78,9 @@ module.exports = {
       appear: 'appear 0.5s ease-out both',
       'appear-left': 'appear-left 0.5s ease-out both',
       'pop-up-popular-cards': 'pop-up 0.3s ease-in both',
-      'fade-down': "fadeDown 1s ease-out both",
+      'fade-down': 'fadeDown 1s ease-out both',
+      'fade-down-home-page-text': 'fadeDown60px 1.5s ease-out both',
+      'scale-up-home-page-image': 'scaleUp50 1.5s ease-in both',
     },
     container: {
       center: true,
