@@ -25,6 +25,14 @@ body {
     @apply animate-fade-down;
 }
 
+.fade-down-home-page-text {
+    @apply animate-fade-down-home-page-text;
+}
+
+.scale-up-home-page-image {
+    @apply animate-scale-up-home-page-image;
+}
+
 .red-flower-animation {
     @apply animate-appear ; 
 }

@@ -678,6 +678,10 @@ video {
   z-index: 20;
 }
 
+.z-30{
+  z-index: 30;
+}
+
 .z-50{
   z-index: 50;
 }
@@ -810,6 +814,22 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+@keyframes fadeDown60px{
+  0%{
+    opacity: 0;
+    transform: translate(0, -60px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.animate-fade-down-home-page-text{
+  animation: fadeDown60px 1.5s ease-out both;
+}
+
 @keyframes move-around{
   0%{
     transform: translate(0, 0) scale(0.2);
@@ -858,6 +878,22 @@ video {
 
 .animate-rotation{
   animation: rotate 15s linear infinite;
+}
+
+@keyframes scaleUp50{
+  0%{
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  100%{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-up-home-page-image{
+  animation: scaleUp50 1.5s ease-in both;
 }
 
 @keyframes scale{
@@ -1363,6 +1399,38 @@ body{
 
 .fade-down-review-section{
   animation: fadeDown 1s ease-out both;
+}
+
+@keyframes fadeDown60px{
+  0%{
+    opacity: 0;
+    transform: translate(0, -60px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.fade-down-home-page-text{
+  animation: fadeDown60px 1.5s ease-out both;
+}
+
+@keyframes scaleUp50{
+  0%{
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  100%{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.scale-up-home-page-image{
+  animation: scaleUp50 1.5s ease-in both;
 }
 
 @keyframes appear{

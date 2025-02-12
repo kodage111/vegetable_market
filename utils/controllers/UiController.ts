@@ -23,6 +23,7 @@ export class UiController {
   }
 
   private init() {
+    this.handleScrollLimitUp();
     this.setActiveNavLink();
     this.validateElements();
     this.addEventListeners();
@@ -300,7 +301,7 @@ export class UiController {
   }
 
   private hideScrollBtn() {
-    this.scrollBtnElement?.classList.remove("bottom-4");
     this.scrollBtnElement?.classList.add("-bottom-1/2");
+    this.scrollBtnElement?.classList.remove("bottom-4");
   }
 }
