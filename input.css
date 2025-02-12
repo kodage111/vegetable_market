@@ -29,6 +29,10 @@ body {
     @apply animate-fade-down-home-page-text;
 }
 
+.fade-down-services-page-text {
+    @apply animate-fade-down-services-page-text;
+}
+
 .scale-up-home-page-image {
     @apply animate-scale-up-home-page-image;
 }
